@@ -1,24 +1,35 @@
-# README
+# 褒めてくれるToDoリスト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+タスク管理アプリケーション
 
-Things you may want to cover:
+### サイトテーマ
+実績を残している方々が口々に揃えてい言う成功の秘訣が「習慣化」
+このアプリケーションはタスク管理を通してそんな「習慣化の実現」に向けて一歩を踏み出してそうとしているあなたの一助になるために開発されました！
+登録したタスクを完了するとあなたの頑張りを様々なセリフで褒めてくれます。
 
-* Ruby version
+### テーマを選んだ理由
+日々の学習でタスクをただこなしていく事に疲れてモチベーションが低下してしまい、そんな時にタスク完了毎に褒めてくれればやる気が持続するのではと思い開発したいと思いました
 
-* System dependencies
+### ターゲットユーザ
+学生から大人まで、日々のタスク管理にちょっとした遊び心が欲しい方
 
-* Configuration
+### 主な利用シーン
+勉強のリスト作成や業務のリスト作成を作れます
 
-* Database creation
+## 設計書
+<...>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使用素材
+- Voiced by https://coefont.studio
 
-* Deployment instructions
-
-* ...
