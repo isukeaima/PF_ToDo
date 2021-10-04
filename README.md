@@ -17,9 +17,11 @@
 ### 主な利用シーン
 勉強のリスト作成や業務のリスト作成を作れます
 
+## 設計書
+https://docs.google.com/spreadsheets/d/1mV_OgpMKus5X4weauJeUx3dcPuvuWeKGIueW4YoiLs8/edit?usp=sharing
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
+https://docs.google.com/spreadsheets/d/1rhK9n3acAsn0XBzckDOzim3Zqrj1p3TJBuSG8CxN7No/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
