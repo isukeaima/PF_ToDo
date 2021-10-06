@@ -1,22 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <%= link_to"ロゴ", root_path, class: 'navbar-brand'%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+      <ul class="navbar-nav ml-auto">
+        <li>
+          <%= link_to "よくやるtask", class: 'nav-link text-light'%>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li>
+          <%= link_to "時間が決まったtask", class: 'nav-link text-light' %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li>
+          <%= link_to "たまたまやったtask", class: 'nav-link text-light' %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li>
+          <%= link_to "ToDo", class: 'nav-link text-light' %>
         </li>
       </ul>
     </div>
