@@ -20,13 +20,14 @@ class TasksController < ApplicationController
   end
 
   # POST /tasks or /tasks.json
+  # リダイレクト先を仮でtime_path
   def create
     @task = Task.new(task_params)
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
+        format.html { redirect_to time_path, notice: "Task was successfully created." }
+        format.json { render :time, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -35,10 +36,11 @@ class TasksController < ApplicationController
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
+  # リダイレクト先を仮でtime_path
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to @task, notice: "Task was successfully updated." }
+        format.html { redirect_to time_path, notice: "Task was successfully updated." }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -48,10 +50,11 @@ class TasksController < ApplicationController
   end
 
   # DELETE /tasks/1 or /tasks/1.json
+  # リダイレクト先を仮でtime_path
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
+      format.html { redirect_to time_path, notice: "Task was successfully destroyed." }
       format.json { head :no_content }
     end
   end
