@@ -75,9 +75,11 @@ class TasksController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+    # def task_params
+    #   params.fetch(:task, {})
+    # end
+    
     def task_params
-      params.fetch(:task, {})
+      params.require(:task).permit(:sentence, :category, :good, :time,)
     end
-    
-    
 end
