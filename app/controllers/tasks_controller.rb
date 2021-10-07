@@ -80,10 +80,12 @@ class TasksController < ApplicationController
   end
 
   def good
-    @task = Task.find(params[:id])
-    p = @task.good + 1
-    @task.update(good: p)
-    redirect_to time_path
+    @task = Task.good
+    @task.increment!(:good, 1)
+    # @task = Task.find(params[:id])
+    # p = @task.good + 1
+    # @task.update(good: p)
+    # redirect_to time_path
   end
 
   private

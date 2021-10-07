@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_10_06_082305) do
   create_table "tasks", force: :cascade do |t|
     t.text "sentence"
     t.integer "category"
-    t.integer "good"
+    t.integer "good", default: 0
     t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
