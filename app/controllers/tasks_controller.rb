@@ -61,22 +61,22 @@ class TasksController < ApplicationController
 
   def time
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.where(category:0)
   end
 
   def every
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.where(category:1)
   end
 
   def todo
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.where(category:3)
   end
 
   def by_chance
     @task = Task.new
-    @tasks = Task.all
+    @tasks = Task.where(category:2)
   end
 
   private
