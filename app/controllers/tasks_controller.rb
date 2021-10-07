@@ -55,17 +55,21 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def time
+    @task = Task.new
   end
-  
+
   def every
+    @task = Task.new
   end
-  
+
   def todo
+    @task = Task.new
   end
-  
+
   def by_chance
+    @task = Task.new
   end
 
   private
@@ -78,7 +82,7 @@ class TasksController < ApplicationController
     # def task_params
     #   params.fetch(:task, {})
     # end
-    
+
     def task_params
       params.require(:task).permit(:sentence, :category, :good, :time,)
     end
