@@ -1,1 +1,11 @@
-よくやるタスク！
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'form', task: @task %>
+    </div>
+  <div class="col-md-8 offset-md-1">
+    <h2>よくやるタスク</h2>
+      <%= render 'index', tasks: @tasks %>
+    </div>
+  </div>
+</div>

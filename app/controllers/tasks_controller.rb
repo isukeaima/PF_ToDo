@@ -58,18 +58,22 @@ class TasksController < ApplicationController
 
   def time
     @task = Task.new
+    @tasks = Task.all
   end
 
   def every
     @task = Task.new
+    @tasks = Task.all
   end
 
   def todo
     @task = Task.new
+    @tasks = Task.all
   end
 
   def by_chance
     @task = Task.new
+    @tasks = Task.all
   end
 
   private
