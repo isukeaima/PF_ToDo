@@ -79,6 +79,13 @@ class TasksController < ApplicationController
     @tasks = Task.where(category:2)
   end
 
+  def good
+    @task = Task.find(params[:id])
+    p = @task.good + 1
+    @task.update(good: p)
+    redirect_to time_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
