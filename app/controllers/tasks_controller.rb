@@ -20,7 +20,6 @@ class TasksController < ApplicationController
   end
 
   # POST /tasks or /tasks.json
-  # リダイレクト先を仮でtime_path
   def create
     @task = Task.new(task_params)
     respond_to do |format|
@@ -47,7 +46,6 @@ class TasksController < ApplicationController
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
-  # リダイレクト先を仮でtime_path
   def update
     respond_to do |format|
       if @task.update(task_params)
@@ -71,11 +69,20 @@ class TasksController < ApplicationController
   end
 
   # DELETE /tasks/1 or /tasks/1.json
-  # リダイレクト先を仮でtime_path
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to time_path, notice: "Task was successfully destroyed." }
+      format.html { if @task.category == "時間が決まったタスク"
+                        redirect_to time_path
+                      elsif @task.category == "よく使うタスク"
+                        redirect_to every_path
+                      elsif @task.category == "たまたま行ったタスク"
+                        redirect_to by_chance_path
+                      elsif @task.category == "ToDo"
+                        redirect_to todo_path
+                      else
+                        render :root
+                      end }
       format.json { head :no_content }
     end
   end
