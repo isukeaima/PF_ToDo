@@ -26,13 +26,13 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html {
-          if @task.category(0) == "時間が決まったタスク"
+          if @task.category == "時間が決まったタスク"
             redirect_to time_path
-          elsif @task.category(1) == "よく使うタスク"
+          elsif @task.category == "よく使うタスク"
             redirect_to every_path
-          elsif @task.category(2) == "たまたま行ったタスク"
+          elsif @task.category == "たまたま行ったタスク"
             redirect_to by_chance_path
-          elsif @task.category(3) == "ToDo"
+          elsif @task.category == "ToDo"
             redirect_to todo_path
           else
             render :root
@@ -51,7 +51,17 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to time_path, notice: "Task was successfully updated." }
+        format.html { if @task.category == "時間が決まったタスク"
+                        redirect_to time_path
+                      elsif @task.category == "よく使うタスク"
+                        redirect_to every_path
+                      elsif @task.category == "たまたま行ったタスク"
+                        redirect_to by_chance_path
+                      elsif @task.category == "ToDo"
+                        redirect_to todo_path
+                      else
+                        render :root
+                      end }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit, status: :unprocessable_entity }
