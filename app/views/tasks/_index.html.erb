@@ -11,7 +11,7 @@
     <% tasks.each do |task| %>
       <tr>
         <td><%= task.sentence %></td>
-        <td><%= link_to 'good', good_path %><%= task.good %></td>
+        <td><%= link_to 'good',  {controller: 'tasks', action: 'good', id: task.id} %><%= task.good %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

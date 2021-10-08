@@ -23,10 +23,21 @@ class TasksController < ApplicationController
   # リダイレクト先を仮でtime_path
   def create
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
-        format.html { redirect_to time_path, notice: "Task was successfully created." }
+        format.html {
+          if @task.category(0) == "時間が決まったタスク"
+            redirect_to time_path
+          elsif @task.category(1) == "よく使うタスク"
+            redirect_to every_path
+          elsif @task.category(2) == "たまたま行ったタスク"
+            redirect_to by_chance_path
+          elsif @task.category(3) == "ToDo"
+            redirect_to todo_path
+          else
+            render :root
+          end
+        }
         format.json { render :time, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -80,9 +91,9 @@ class TasksController < ApplicationController
   end
 
   def good
-    @task = Task.good
-    @task.increment!(:good, 1)
-    # @task = Task.find(params[:id])
+    # @task.increment!(:good, 1)
+    @task = Task.find(params[:id])
+    @task.update(good: @task.good += 1)
     # p = @task.good + 1
     # @task.update(good: p)
     # redirect_to time_path
