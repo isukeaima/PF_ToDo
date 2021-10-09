@@ -6,13 +6,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <%= link_to "全て削除",destroy_all_task_path,  method: :delete%>
+  <!--<#%= link_to "全て削除",destroy_all_path,  method: :delete%>-->
 
   <tbody>
     <% tasks.each do |task| %>
       <tr>
         <% if task.category == "時間が決まったタスク" %>
-        <td><%= task.time.strftime("%H:%M") %></td>
+        <td><%= task.time %></td>
         <% end %>
         <td><%= task.sentence %></td>
         <td><%= link_to 'good', good_task_path(task), method: :patch %><%= task.good %></td>

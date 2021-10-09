@@ -87,23 +87,23 @@ class TasksController < ApplicationController
     end
   end
 
-  def destroy_all
-    Task.destroy_all
-    respond_to do |format|
-      format.html { if @task.category == "時間が決まったタスク"
-                        redirect_to time_path
-                      elsif @task.category == "よく使うタスク"
-                        redirect_to every_path
-                      elsif @task.category == "たまたま行ったタスク"
-                        redirect_to by_chance_path
-                      elsif @task.category == "ToDo"
-                        redirect_to todo_path
-                      else
-                        render :root
-                      end }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy_all
+  #   Task.destroy_all
+  #   respond_to do |format|
+  #     format.html { if Task.category == "時間が決まったタスク"
+  #                       redirect_to time_path
+  #                     elsif Task.category == "よく使うタスク"
+  #                       redirect_to every_path
+  #                     elsif Task.category == "たまたま行ったタスク"
+  #                       redirect_to by_chance_path
+  #                     elsif Task.category == "ToDo"
+  #                       redirect_to todo_path
+  #                     else
+  #                       render :root
+  #                     end }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   def time
     @task = Task.new
@@ -127,7 +127,7 @@ class TasksController < ApplicationController
 
 #カウントアップ機能
   def good
-    @task = Task.find(params[:id])
+
     @task.increment!(:good, 1)
     redirect_to :time
   end
