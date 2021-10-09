@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.text :sentence
       t.integer :category
       t.integer :good, default: 0
-      t.integer :time
+      t.time :time
 
       t.timestamps
     end

@@ -14,6 +14,7 @@
   <div class="actions">
     <%= f.text_area :sentence %>
     <%= f.select :category, options_for_select(Task.categories.keys), {prompt: "選択してください"} %>
+    <%= f.time_field :time %>
     <%= f.submit %>
   </div>
 <% end %>

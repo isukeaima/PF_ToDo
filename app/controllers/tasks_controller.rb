@@ -89,7 +89,7 @@ class TasksController < ApplicationController
 
   def time
     @task = Task.new
-    @tasks = Task.where(category:0)
+    @tasks = Task.where(category:0).order(:time)
   end
 
   def every
@@ -108,9 +108,10 @@ class TasksController < ApplicationController
   end
 
   def good
-    # @task.increment!(:good, 1)
     @task = Task.find(params[:id])
-    @task.update(good: @task.good += 1)
+    @task.increment!(:good, 1)
+    redirect_to :time
+    # @task.update(good: @task.good += 1)
     # p = @task.good + 1
     # @task.update(good: p)
     # redirect_to time_path

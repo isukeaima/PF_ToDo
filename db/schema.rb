@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_10_06_082305) do
     t.text "sentence"
     t.integer "category"
     t.integer "good", default: 0
-    t.integer "time"
+    t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
