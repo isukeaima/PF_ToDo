@@ -18,3 +18,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+/* global $ */
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  $( "#task_category" ).change(function() {
+    if (this.value == "時間が決まったタスク"){
+      $("#task_time").removeClass( "time" );
+
+    }else{
+      $("#task_time").addClass( "time" );
+    }
+  });
+});

@@ -13,8 +13,14 @@
 
   <div class="actions">
     <%= f.text_area :sentence %>
-    <%= f.select :category, options_for_select(Task.categories.keys), {prompt: "選択してください"} %>
-    <%= f.time_field :time %>
+    <select name="task[category]" id="task_category">
+      <option value="">選択してください</option>
+      <option value="時間が決まったタスク">時間が決まったタスク</option>
+      <option value="よく使うタスク">よく使うタスク</option>
+      <option value="たまたま行ったタスク">たまたま行ったタスク</option>
+      <option value="ToDo">ToDo</option>
+    </select>
+    <%= f.time_field :time, class: "time" %>
     <%= f.submit %>
   </div>
 <% end %>

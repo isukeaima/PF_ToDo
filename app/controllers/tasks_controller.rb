@@ -108,6 +108,7 @@ class TasksController < ApplicationController
   def time
     @task = Task.new
     @tasks = Task.where(category:0).order(:time)
+    p @tasks
   end
 
   def every
@@ -127,7 +128,7 @@ class TasksController < ApplicationController
 
 #カウントアップ機能
   def good
-
+    @task = Task.find(params[:id])
     @task.increment!(:good, 1)
     redirect_to :time
   end
