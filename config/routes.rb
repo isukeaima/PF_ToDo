@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tasks, except: [:show, :new] do
     member do
       patch :good
+      delete :destroy_all
     end
   end
   get '/time' => 'tasks#time'

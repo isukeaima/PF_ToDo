@@ -11,8 +11,10 @@
 
   <body>
     <header>
-      
+
       <%= render 'layouts/header' %>
+      あなたの今日のグッジョブは<%= Task.all.sum(:good) %>グッジョブです！
+
     </header>
     <%= yield %>
   </body>

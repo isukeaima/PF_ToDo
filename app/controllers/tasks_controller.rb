@@ -87,6 +87,24 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy_all
+    Task.destroy_all
+    respond_to do |format|
+      format.html { if @task.category == "時間が決まったタスク"
+                        redirect_to time_path
+                      elsif @task.category == "よく使うタスク"
+                        redirect_to every_path
+                      elsif @task.category == "たまたま行ったタスク"
+                        redirect_to by_chance_path
+                      elsif @task.category == "ToDo"
+                        redirect_to todo_path
+                      else
+                        render :root
+                      end }
+      format.json { head :no_content }
+    end
+  end
+
   def time
     @task = Task.new
     @tasks = Task.where(category:0).order(:time)
@@ -106,7 +124,7 @@ class TasksController < ApplicationController
     @task = Task.new
     @tasks = Task.where(category:2)
   end
-  
+
 #カウントアップ機能
   def good
     @task = Task.find(params[:id])

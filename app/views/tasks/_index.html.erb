@@ -6,6 +6,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <%= link_to "全て削除",destroy_all_task_path,  method: :delete%>
 
   <tbody>
     <% tasks.each do |task| %>
