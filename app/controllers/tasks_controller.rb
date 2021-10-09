@@ -106,7 +106,8 @@ class TasksController < ApplicationController
     @task = Task.new
     @tasks = Task.where(category:2)
   end
-
+  
+#カウントアップ機能
   def good
     @task = Task.find(params[:id])
     @task.increment!(:good, 1)
