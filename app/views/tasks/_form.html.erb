@@ -1,4 +1,4 @@
-<%= form_with(model: task, local: true) do |f| %>
+<%= form_with(model: task, class: 'js-form') do |f| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -12,7 +12,9 @@
   <% end %>
 
   <div class="actions">
+    <div class: 'form-group'>
     <%= f.text_area :sentence %>
+    </div>
     <select name="task[category]" id="task_category">
       <option value="">選択してください</option>
       <option value="時間が決まったタスク">時間が決まったタスク</option>
